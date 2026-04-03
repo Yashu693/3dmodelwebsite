@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Precision 3D — Custom 3D Printing for Prototypes & Production</title>
+  <meta name="description" content="Precision 3D delivers high-quality custom 3D printing services for prototypes, production parts, mechanical components, and decorative models."/>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖨️</text></svg>"/>
+</head>
+<body>
+
+<!-- ── Navbar ─────────────────────────────────────────── -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon">⬡</div>
+      Precision<span> 3D</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html"     class="nav-link active">Home</a>
+      <a href="services.html"  class="nav-link">Services</a>
+      <a href="portfolio.html" class="nav-link">Portfolio</a>
+      <a href="contact.html"   class="nav-link">Contact</a>
+    </div>
+    <a href="quote.html" class="btn btn-primary btn-sm nav-cta">Get a Quote</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="index.html"     class="nav-link active">Home</a>
+  <a href="services.html"  class="nav-link">Services</a>
+  <a href="portfolio.html" class="nav-link">Portfolio</a>
+  <a href="contact.html"   class="nav-link">Contact</a>
+  <a href="quote.html"     class="btn btn-primary" style="margin-top:12px;justify-content:center">Get a Quote</a>
+</div>
+
+<!-- ── Hero ──────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-dot"></div>
+        <span class="hero-eyebrow-text">Now accepting custom orders</span>
+      </div>
+      <h1 class="hero-title">
+        Custom 3D Printing for<br/>
+        <span class="highlight">Prototypes &amp; Production</span>
+      </h1>
+      <p class="hero-desc">
+        From concept to finished part — Precision 3D delivers
+        ultra-accurate, high-quality prints using FDM, SLA, and SLS
+        technologies. Rapid turnarounds, premium materials, no minimum order.
+      </p>
+      <div class="hero-actions">
+        <a href="portfolio.html" class="btn btn-primary btn-lg">
+          <span>View Portfolio</span>
+          <span>→</span>
+        </a>
+        <a href="quote.html" class="btn btn-outline btn-lg">Get a Quote</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">2,400+</div>
+          <div class="hero-stat-label">Parts Delivered</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">98%</div>
+          <div class="hero-stat-label">Client Satisfaction</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">24h</div>
+          <div class="hero-stat-label">Rapid Turnaround</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-3d-wrap">
+        <div class="hero-orbit"><div class="hero-orbit-dot"></div></div>
+        <div class="hero-orbit-2"><div class="hero-orbit-dot-2"></div></div>
+        <div class="hero-model-card">
+          <img src="images/arch_model.png" alt="3D printed architectural model" />
+        </div>
+        <div class="hero-badge-floating hero-badge-1">✦ FDM · SLA · SLS</div>
+        <div class="hero-badge-floating hero-badge-2">⚡ 24h Delivery</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Tech Strip ─────────────────────────────────────────── -->
+<div class="tech-strip">
+  <div class="container">
+    <div class="tech-strip-inner" id="techStrip">
+      <div class="tech-item"><span>🖨️</span> FDM Printing</div>
+      <div class="tech-item"><span>💡</span> SLA Resin</div>
+      <div class="tech-item"><span>⚙️</span> SLS Nylon</div>
+      <div class="tech-item"><span>🔩</span> Metal Parts</div>
+      <div class="tech-item"><span>🏗️</span> Architectural Models</div>
+      <div class="tech-item"><span>🚀</span> Aerospace Components</div>
+      <div class="tech-item"><span>🩺</span> Medical Prototypes</div>
+      <div class="tech-item"><span>🎨</span> Decorative Models</div>
+      <div class="tech-item"><span>📐</span> Engineering Parts</div>
+      <div class="tech-item"><span>🖨️</span> FDM Printing</div>
+      <div class="tech-item"><span>💡</span> SLA Resin</div>
+      <div class="tech-item"><span>⚙️</span> SLS Nylon</div>
+      <div class="tech-item"><span>🔩</span> Metal Parts</div>
+      <div class="tech-item"><span>🏗️</span> Architectural Models</div>
+      <div class="tech-item"><span>🚀</span> Aerospace Components</div>
+      <div class="tech-item"><span>🩺</span> Medical Prototypes</div>
+      <div class="tech-item"><span>🎨</span> Decorative Models</div>
+      <div class="tech-item"><span>📐</span> Engineering Parts</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Stats Bar ──────────────────────────────────────────── -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stat-item">
+      <div class="stat-num" data-count="2400">0</div>
+      <div class="stat-label">Parts Produced</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-count="350">0</div>
+      <div class="stat-label">Happy Clients</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-count="12">0</div>
+      <div class="stat-label">Material Options</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-count="98">0</div>
+      <div class="stat-label">% Satisfaction Rate</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Services Overview ──────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Precision Printing,<br/><span class="highlight">Every Time</span></h2>
+      <p class="section-subtitle">From rapid prototyping to full production runs, we deliver parts that meet exact tolerances using industry-leading technology.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal delay-1">
+        <div class="service-icon">🏗️</div>
+        <div class="service-title">Rapid Prototyping</div>
+        <p class="service-desc">Turn your CAD files into physical prototypes within 24 hours. Test, iterate, and refine your design before committing to production.</p>
+        <div class="service-tags">
+          <span class="service-tag">FDM</span>
+          <span class="service-tag">SLA</span>
+          <span class="service-tag">24h Turnaround</span>
+        </div>
+      </div>
+      <div class="service-card reveal delay-2">
+        <div class="service-icon">⚙️</div>
+        <div class="service-title">Production Runs</div>
+        <p class="service-desc">Scale from 1 to 10,000 parts with consistent quality. Our automated workflows ensure every piece meets your exact specifications.</p>
+        <div class="service-tags">
+          <span class="service-tag">No Minimum</span>
+          <span class="service-tag">SLS</span>
+          <span class="service-tag">Volume Pricing</span>
+        </div>
+      </div>
+      <div class="service-card reveal delay-3">
+        <div class="service-icon">🔩</div>
+        <div class="service-title">Mechanical Parts</div>
+        <p class="service-desc">High-strength functional components with tight tolerances. Perfect for jigs, fixtures, housings, brackets, and end-use parts.</p>
+        <div class="service-tags">
+          <span class="service-tag">±0.1mm</span>
+          <span class="service-tag">Nylon</span>
+          <span class="service-tag">Carbon Fiber</span>
+        </div>
+      </div>
+      <div class="service-card reveal delay-1">
+        <div class="service-icon">🏛️</div>
+        <div class="service-title">Architectural Models</div>
+        <p class="service-desc">Stunning scale models for presentations, planning, and exhibitions. We capture every structural detail at 1:50 to 1:200 scale.</p>
+        <div class="service-tags">
+          <span class="service-tag">Scale Models</span>
+          <span class="service-tag">Full Color</span>
+          <span class="service-tag">PLA+</span>
+        </div>
+      </div>
+      <div class="service-card reveal delay-2">
+        <div class="service-icon">🎨</div>
+        <div class="service-title">Custom Design</div>
+        <p class="service-desc">Don't have a 3D file? Our in-house design team will model your idea from sketches, reference images, or verbal descriptions.</p>
+        <div class="service-tags">
+          <span class="service-tag">3D Modeling</span>
+          <span class="service-tag">CAD Support</span>
+          <span class="service-tag">Reverse Eng.</span>
+        </div>
+      </div>
+      <div class="service-card reveal delay-3">
+        <div class="service-icon">🚀</div>
+        <div class="service-title">Finishing & Post-Processing</div>
+        <p class="service-desc">Sanding, painting, electroplating, vapor smoothing — we deliver parts that are ready for immediate use or display.</p>
+        <div class="service-tags">
+          <span class="service-tag">Painting</span>
+          <span class="service-tag">Smoothing</span>
+          <span class="service-tag">Plating</span>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px;">
+      <a href="services.html" class="btn btn-outline">Explore All Services →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Portfolio Preview ───────────────────────────────────── -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="reveal" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;">
+      <div>
+        <div class="section-label">Featured Work</div>
+        <h2 class="section-title">Our <span class="highlight">Portfolio</span></h2>
+      </div>
+      <a href="portfolio.html" class="btn btn-outline">View All Projects →</a>
+    </div>
+    <div class="portfolio-grid" style="margin-top:40px;">
+      <div class="portfolio-card reveal delay-1" onclick="location.href='product-detail.html?id=arch'">
+        <div class="portfolio-img-wrap">
+          <span class="portfolio-cat-badge cat-proto">Prototypes</span>
+          <img src="images/arch_model.png" alt="Architectural Scale Model" loading="lazy"/>
+          <div class="portfolio-overlay">
+            <button class="portfolio-overlay-btn">View Details</button>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-info-top">
+            <div class="portfolio-name">Architectural Scale Model</div>
+            <div class="portfolio-price">$149</div>
+          </div>
+          <p class="portfolio-desc">Detailed building prototype for urban planning presentation.</p>
+          <a href="product-detail.html?id=arch" class="portfolio-view-link">View Details →</a>
+        </div>
+      </div>
+      <div class="portfolio-card reveal delay-2" onclick="location.href='product-detail.html?id=vase'">
+        <div class="portfolio-img-wrap">
+          <span class="portfolio-cat-badge cat-deco">Decorative</span>
+          <img src="images/organic_vase.png" alt="Organic Decorative Vase" loading="lazy"/>
+          <div class="portfolio-overlay">
+            <button class="portfolio-overlay-btn">View Details</button>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-info-top">
+            <div class="portfolio-name">Organic Decorative Vase</div>
+            <div class="portfolio-price">$89</div>
+          </div>
+          <p class="portfolio-desc">Artistic flowing design printed in premium white resin.</p>
+          <a href="product-detail.html?id=vase" class="portfolio-view-link">View Details →</a>
+        </div>
+      </div>
+      <div class="portfolio-card reveal delay-3" onclick="location.href='product-detail.html?id=turbine'">
+        <div class="portfolio-img-wrap">
+          <span class="portfolio-cat-badge cat-ind">Industrial</span>
+          <img src="images/turbine_blade.png" alt="Industrial Turbine Blade" loading="lazy"/>
+          <div class="portfolio-overlay">
+            <button class="portfolio-overlay-btn">View Details</button>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-info-top">
+            <div class="portfolio-name">Industrial Turbine Blade</div>
+            <div class="portfolio-price">$320</div>
+          </div>
+          <p class="portfolio-desc">High-performance turbine component for aerospace testing.</p>
+          <a href="product-detail.html?id=turbine" class="portfolio-view-link">View Details →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Process ────────────────────────────────────────────── -->
+<section class="section" style="background:var(--dark-2);">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-label">How It Works</div>
+      <h2 class="section-title">From File to <span class="highlight">Finished Part</span></h2>
+      <p class="section-subtitle" style="margin:0 auto 0;">Simple, streamlined process — from upload to delivery.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-connector"></div>
+      <div class="process-step reveal delay-1">
+        <div class="process-num">01</div>
+        <div class="process-step-title">Upload Your File</div>
+        <p class="process-step-desc">Send us your STL, OBJ, or STEP file. No file? Our designers can create one from your sketches.</p>
+      </div>
+      <div class="process-step reveal delay-2">
+        <div class="process-num">02</div>
+        <div class="process-step-title">Get an Instant Quote</div>
+        <p class="process-step-desc">Receive pricing within minutes based on material, size, resolution, and quantity needs.</p>
+      </div>
+      <div class="process-step reveal delay-3">
+        <div class="process-num">03</div>
+        <div class="process-step-title">We Print & Finish</div>
+        <p class="process-step-desc">Your parts are printed with precision, post-processed, inspected for quality, and packaged securely.</p>
+      </div>
+      <div class="process-step reveal delay-4">
+        <div class="process-num">04</div>
+        <div class="process-step-title">Fast Delivery</div>
+        <p class="process-step-desc">Shipped worldwide. Standard 3–5 days or express 24-hour turnaround available.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Testimonials ───────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-label">Testimonials</div>
+      <h2 class="section-title">What Our Clients <span class="highlight">Say</span></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal delay-1">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Precision 3D delivered our architectural model in 48 hours with incredible detail. The client was blown away at the presentation."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AK</div>
+          <div>
+            <div class="testimonial-name">Alex Kim</div>
+            <div class="testimonial-role">Principal Architect, UrbanForm Studio</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal delay-2">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"The turbine blade prototype was flawless — within spec on every dimension. Best 3D printing service I've worked with in 10 years."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SR</div>
+          <div>
+            <div class="testimonial-name">Sarah Rodriguez</div>
+            <div class="testimonial-role">Lead Engineer, AeroTech Systems</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal delay-3">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Ordered 200 custom enclosures. Every single one was perfect. Volume pricing was very competitive. Highly recommend for production runs."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">MJ</div>
+          <div>
+            <div class="testimonial-name">Marcus Johnson</div>
+            <div class="testimonial-role">Head of Product, NovaTech Devices</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────────────── -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-card reveal">
+      <div class="section-label" style="margin-bottom:16px;">Start Today</div>
+      <h2 class="cta-title">Ready to Bring Your<br/><span class="highlight">Ideas to Life?</span></h2>
+      <p class="cta-desc">Upload your 3D file and get an instant quote. No commitment, no minimum order. Just great parts, fast.</p>
+      <div class="cta-actions">
+        <a href="quote.html"     class="btn btn-primary btn-lg">Get a Free Quote →</a>
+        <a href="contact.html"   class="btn btn-outline btn-lg">Talk to an Expert</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-icon">⬡</div>
+          Precision<span style="color:var(--blue-light)"> 3D</span>
+        </div>
+        <p class="footer-desc">Custom 3D printing for prototypes and production. Precision-crafted parts delivered fast.</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Twitter">𝕏</a>
+          <a href="#" class="footer-social-link" aria-label="LinkedIn">in</a>
+          <a href="#" class="footer-social-link" aria-label="Instagram">📷</a>
+          <a href="#" class="footer-social-link" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <div class="footer-links">
+          <a href="index.html"     class="footer-link">Home</a>
+          <a href="services.html"  class="footer-link">Services</a>
+          <a href="portfolio.html" class="footer-link">Portfolio</a>
+          <a href="contact.html"   class="footer-link">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <div class="footer-links">
+          <a href="services.html" class="footer-link">FDM Printing</a>
+          <a href="services.html" class="footer-link">SLA Resin</a>
+          <a href="services.html" class="footer-link">SLS Nylon</a>
+          <a href="services.html" class="footer-link">Post-Processing</a>
+          <a href="services.html" class="footer-link">Custom Design</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-links">
+          <span class="footer-link">📍 123 Innovation Drive</span>
+          <span class="footer-link">Austin, TX 78701</span>
+          <a href="mailto:hello@precision3d.com" class="footer-link">📧 hello@precision3d.com</a>
+          <a href="tel:+15125550199" class="footer-link">📞 +1 (512) 555-0199</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Precision 3D. All rights reserved.</span>
+      <span>Privacy Policy · Terms of Service</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast">✅ Message sent successfully!</div>
+
+<script src="main.js"></script>
+</body>
+</html>

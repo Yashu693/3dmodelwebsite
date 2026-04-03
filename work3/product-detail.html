@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Detail — Precision 3D</title>
+  <meta name="description" content="View detailed specifications and pricing for our precision 3D printed products."/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖨️</text></svg>"/>
+  <style>
+    /* ── Extra styles specific to this page ── */
+    .detail-page { padding: 140px 0 100px; }
+    .product-thumb { cursor: pointer; }
+
+    /* Lightbox */
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 9999;
+      background: rgba(0,0,0,0.92); align-items: center; justify-content: center;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 80vw; max-height: 80vh; border-radius: 16px; }
+    .lightbox-close {
+      position: absolute; top: 24px; right: 32px;
+      font-size: 36px; color: #fff; cursor: pointer; line-height: 1;
+      background: none; border: none;
+    }
+
+    /* Related products strip */
+    .related-strip { background: var(--dark-2); border-top: 1px solid var(--dark-border); padding: 70px 0; }
+    .related-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 36px; }
+
+    @media(max-width:768px){ .related-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<!-- ── Navbar ─────────────────────────────────────────────── -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon">⬡</div>
+      Precision<span> 3D</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html"     class="nav-link">Home</a>
+      <a href="services.html"  class="nav-link">Services</a>
+      <a href="portfolio.html" class="nav-link active">Portfolio</a>
+      <a href="contact.html"   class="nav-link">Contact</a>
+    </div>
+    <a href="quote.html" class="btn btn-primary btn-sm nav-cta">Get a Quote</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="index.html"     class="nav-link">Home</a>
+  <a href="services.html"  class="nav-link">Services</a>
+  <a href="portfolio.html" class="nav-link active">Portfolio</a>
+  <a href="contact.html"   class="nav-link">Contact</a>
+  <a href="quote.html"     class="btn btn-primary" style="margin-top:12px;justify-content:center">Get a Quote</a>
+</div>
+
+<!-- ── Detail Content ─────────────────────────────────────── -->
+<div class="detail-page">
+  <div class="container">
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb fade-in-up">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="portfolio.html">Portfolio</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current" id="bcCurrent">Product</span>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-detail-grid">
+
+      <!-- Gallery -->
+      <div class="product-gallery fade-in-up">
+        <div class="product-main-img" id="mainImgWrap">
+          <img id="mainImg" src="images/arch_model.png" alt="Main product image"/>
+        </div>
+        <div class="product-thumbs" id="thumbRow">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Info -->
+      <div class="product-info fade-in-up delay-1">
+        <div>
+          <span class="product-cat-badge" id="prodCategory">Prototypes</span>
+        </div>
+        <h1 class="product-title" id="prodTitle">Architectural Scale Model</h1>
+        <div class="product-price" id="prodPrice">$149</div>
+        <p class="product-desc-text" id="prodDesc">
+          Loading product details...
+        </p>
+
+        <!-- Specs -->
+        <div>
+          <div class="specs-title">Specifications</div>
+          <div class="specs-grid" id="specsGrid">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="product-actions">
+          <a href="quote.html" class="btn btn-primary btn-lg" id="btnQuote">
+            Request a Quote
+          </a>
+          <a href="contact.html" class="btn btn-outline btn-lg">Send Inquiry</a>
+        </div>
+
+        <!-- Trust badges -->
+        <div style="display:flex;gap:20px;flex-wrap:wrap;padding-top:8px;">
+          <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-muted);">
+            <span>🔒</span> Secure checkout
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-muted);">
+            <span>🚚</span> Free shipping over $200
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-muted);">
+            <span>✅</span> Quality guarantee
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div style="height:1px;background:var(--dark-border);margin:70px 0;"></div>
+
+    <!-- Extended Description -->
+    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:start;" class="reveal">
+      <div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;margin-bottom:16px;">
+          About This Product
+        </h2>
+        <p id="extDesc" style="color:var(--text-secondary);line-height:1.8;font-size:15px;"></p>
+
+        <div style="margin-top:28px;">
+          <h3 style="font-size:16px;font-weight:700;margin-bottom:14px;">What's Included</h3>
+          <ul id="includesList" style="display:flex;flex-direction:column;gap:10px;"></ul>
+        </div>
+      </div>
+      <div style="background:var(--dark-4);border:1px solid var(--dark-border);border-radius:var(--radius-xl);padding:32px;">
+        <h3 style="font-size:16px;font-weight:700;margin-bottom:20px;">Printing Details</h3>
+        <div id="printDetails" style="display:flex;flex-direction:column;gap:14px;"></div>
+        <div style="margin-top:24px;padding-top:24px;border-top:1px solid var(--dark-border);">
+          <div style="font-size:13px;color:var(--text-muted);margin-bottom:8px;">Lead Time</div>
+          <div style="font-size:20px;font-weight:700;" id="leadTime">3–5 business days</div>
+          <div style="font-size:12px;color:var(--accent);margin-top:4px;">Express 24h available +$40</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Related Products ────────────────────────────────────── -->
+<div class="related-strip">
+  <div class="container">
+    <div class="section-label reveal">More From Our Portfolio</div>
+    <h2 class="section-title reveal" style="margin-top:8px;">You May Also <span class="highlight">Like</span></h2>
+    <div class="related-grid" id="relatedGrid">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- ── Footer ─────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-icon">⬡</div>
+          Precision<span style="color:var(--blue-light)"> 3D</span>
+        </div>
+        <p class="footer-desc">Custom 3D printing for prototypes and production. Precision-crafted parts delivered fast.</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link">𝕏</a>
+          <a href="#" class="footer-social-link">in</a>
+          <a href="#" class="footer-social-link">📷</a>
+          <a href="#" class="footer-social-link">▶</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <div class="footer-links">
+          <a href="index.html"     class="footer-link">Home</a>
+          <a href="services.html"  class="footer-link">Services</a>
+          <a href="portfolio.html" class="footer-link">Portfolio</a>
+          <a href="contact.html"   class="footer-link">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <div class="footer-links">
+          <a href="services.html" class="footer-link">FDM Printing</a>
+          <a href="services.html" class="footer-link">SLA Resin</a>
+          <a href="services.html" class="footer-link">SLS Nylon</a>
+          <a href="services.html" class="footer-link">Post-Processing</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-links">
+          <span class="footer-link">📍 123 Innovation Drive, Austin TX</span>
+          <a href="mailto:hello@precision3d.com" class="footer-link">📧 hello@precision3d.com</a>
+          <a href="tel:+15125550199" class="footer-link">📞 +1 (512) 555-0199</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Precision 3D. All rights reserved.</span>
+      <span>Privacy Policy · Terms of Service</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">×</button>
+  <img id="lightboxImg" src="" alt="Enlarged view"/>
+</div>
+
+<script src="main.js"></script>
+<script>
+// ── Product Data ──────────────────────────────────────────
+const products = {
+  arch: {
+    title: 'Architectural Scale Model',
+    price: '$149',
+    category: 'Prototypes',
+    catClass: 'proto',
+    img: 'images/arch_model.png',
+    thumbs: ['images/arch_model.png','images/organic_vase.png','images/turbine_blade.png','images/robot_arm.png','images/phone_case.png'],
+    shortDesc: 'Detailed building prototype for urban planning presentation.',
+    fullDesc: `This architectural scale model is precision-crafted using FDM printing technology, capturing every structural detail of the original design. Built at 1:100 scale, it's perfect for urban planning presentations, client reviews, and design competitions. The model features removable floors for interior viewing and accurate facade detailing.`,
+    specs: [
+      { label: 'Technology', value: 'FDM Printing' },
+      { label: 'Material',   value: 'PLA+ White' },
+      { label: 'Scale',      value: '1:100' },
+      { label: 'Build Time', value: '18 hours' },
+      { label: 'Layer Height', value: '0.1mm' },
+      { label: 'Dimensions', value: '200 × 150 × 120 mm' },
+    ],
+    includes: ['Fully assembled scale model','Protective carrying case','Certificate of precision','Care & display instructions'],
+    printDetails: [
+      { label: 'Infill Density', value: '25%' },
+      { label: 'Supports',       value: 'Breakaway' },
+      { label: 'Surface Finish', value: 'Light sanding + primer' },
+      { label: 'Color Options',  value: 'White, Ivory, Grey' },
+    ],
+    leadTime: '4–6 business days',
+  },
+  vase: {
+    title: 'Organic Decorative Vase',
+    price: '$89',
+    category: 'Decorative Models',
+    catClass: 'deco',
+    img: 'images/organic_vase.png',
+    thumbs: ['images/organic_vase.png','images/arch_model.png','images/turbine_blade.png','images/robot_arm.png','images/phone_case.png'],
+    shortDesc: 'Artistic flowing design printed in premium white resin.',
+    fullDesc: `This organic decorative vase showcases the artistic capabilities of SLA resin printing. Its flowing, twisted form is impossible to achieve with traditional manufacturing methods. Printed in premium white resin with an ultra-smooth surface, it's ready for display or use as a functional vase with a sealed interior.`,
+    specs: [
+      { label: 'Technology',    value: 'SLA Resin' },
+      { label: 'Material',      value: 'Premium White Resin' },
+      { label: 'Height',        value: '280 mm' },
+      { label: 'Build Time',    value: '8 hours' },
+      { label: 'Layer Height',  value: '0.05mm' },
+      { label: 'Wall Thickness',value: '3mm' },
+    ],
+    includes: ['Hand-finished vase','UV-cured sealed interior','Silicone base pad','Display stand'],
+    printDetails: [
+      { label: 'Finish',        value: 'Vapor smoothed + polished' },
+      { label: 'UV Curing',     value: 'Post-cured 4h' },
+      { label: 'Watertight',    value: 'Yes (sealed)' },
+      { label: 'Color Options', value: 'White, Black, Translucent' },
+    ],
+    leadTime: '3–4 business days',
+  },
+  turbine: {
+    title: 'Industrial Turbine Blade',
+    price: '$320',
+    category: 'Industrial Components',
+    catClass: 'ind',
+    img: 'images/turbine_blade.png',
+    thumbs: ['images/turbine_blade.png','images/arch_model.png','images/organic_vase.png','images/robot_arm.png','images/phone_case.png'],
+    shortDesc: 'High-performance turbine component for aerospace testing.',
+    fullDesc: `This industrial turbine blade is engineered for high-performance aerospace testing applications. Printed using SLS technology with a glass-filled nylon compound, it provides exceptional strength-to-weight ratio and thermal resistance up to 180°C. Each blade undergoes dimensional inspection and surface finishing to meet strict aerodynamic tolerances.`,
+    specs: [
+      { label: 'Technology',    value: 'SLS Nylon' },
+      { label: 'Material',      value: 'Glass-Filled Nylon PA12' },
+      { label: 'Tolerance',     value: '±0.1mm' },
+      { label: 'Build Time',    value: '24 hours' },
+      { label: 'Max Temp',      value: '180°C' },
+      { label: 'Diameter',      value: '220mm' },
+    ],
+    includes: ['Precision-printed turbine blade','Dimensional inspection report','Material data sheet','Protective packaging'],
+    printDetails: [
+      { label: 'Post-Process',  value: 'Bead blasting + sealing' },
+      { label: 'Inspection',    value: 'CMM dimensional check' },
+      { label: 'Certifications','value': 'Dimensional report included' },
+      { label: 'Color',         value: 'Natural grey' },
+    ],
+    leadTime: '5–7 business days',
+  },
+  robot: {
+    title: 'Articulated Robotic Arm',
+    price: '$210',
+    category: 'Mechanical Parts',
+    catClass: 'mech',
+    img: 'images/robot_arm.png',
+    thumbs: ['images/robot_arm.png','images/arch_model.png','images/organic_vase.png','images/turbine_blade.png','images/phone_case.png'],
+    shortDesc: 'Multi-joint mechanical arm for robotics research and demonstrations.',
+    fullDesc: `This fully articulated robotic arm is designed for educational robotics and demonstration environments. With 5 degrees of freedom and snap-fit joint assemblies, it can be assembled without tools. Printed in tough PETG for excellent impact resistance and dimensional stability under cyclic loading.`,
+    specs: [
+      { label: 'Technology',  value: 'FDM' },
+      { label: 'Material',    value: 'PETG Black' },
+      { label: 'DoF',         value: '5 Degrees of Freedom' },
+      { label: 'Build Time',  value: '20 hours' },
+      { label: 'Reach',       value: '350mm' },
+      { label: 'Payload',     value: 'Up to 200g' },
+    ],
+    includes: ['All printed components','M3 hardware kit','Assembly guide PDF','Servo mount adapters'],
+    printDetails: [
+      { label: 'Infill',       value: '40% Gyroid' },
+      { label: 'Wall Count',   value: '4 perimeters' },
+      { label: 'Joints',       value: 'Snap-fit, no glue needed' },
+      { label: 'Color',        value: 'Matte Black' },
+    ],
+    leadTime: '4–5 business days',
+  },
+  phone: {
+    title: 'Custom Phone Case',
+    price: '$45',
+    category: 'Prototypes',
+    catClass: 'proto',
+    img: 'images/phone_case.png',
+    thumbs: ['images/phone_case.png','images/arch_model.png','images/organic_vase.png','images/turbine_blade.png','images/robot_arm.png'],
+    shortDesc: 'Precision-fitted custom smartphone enclosure, ready for branding.',
+    fullDesc: `This custom phone case is precision-engineered to fit specific device models with exact port and button cutouts. Ideal for product prototyping, branding mockups, or limited-run custom accessories. Available in any color and with optional logo embossing or custom texture patterns.`,
+    specs: [
+      { label: 'Technology',  value: 'FDM' },
+      { label: 'Material',    value: 'TPU Flexible' },
+      { label: 'Fit',         value: 'Model-specific precision' },
+      { label: 'Build Time',  value: '3 hours' },
+      { label: 'Thickness',   value: '1.5mm shell' },
+      { label: 'Colors',      value: 'Any RAL color' },
+    ],
+    includes: ['Printed phone case','Port/button cutout precision fit','Optional branding emboss'],
+    printDetails: [
+      { label: 'Finish',       value: 'Smooth outer, textured inner' },
+      { label: 'Flexibility',  value: 'Shore 95A TPU' },
+      { label: 'Min Order',    value: '1 unit' },
+      { label: 'Color',        value: 'Blue, Black, any custom' },
+    ],
+    leadTime: '1–2 business days',
+  },
+  gear: {
+    title: 'Precision Gear Assembly',
+    price: '$175',
+    category: 'Mechanical Parts',
+    catClass: 'mech',
+    img: 'images/turbine_blade.png',
+    thumbs: ['images/turbine_blade.png','images/arch_model.png','images/robot_arm.png','images/phone_case.png','images/organic_vase.png'],
+    shortDesc: 'Custom gear train with helical teeth, printed in industrial nylon.',
+    fullDesc: `This precision gear assembly features custom helical tooth profiles computed from user-specified gear ratios. Printed in industrial SLS nylon for low friction and high wear resistance, making it suitable for continuous-duty mechanical drives.`,
+    specs: [
+      { label: 'Technology',  value: 'SLS Nylon' },
+      { label: 'Material',    value: 'PA12 Nylon Natural' },
+      { label: 'Tooth Profile','value': 'Involute helical' },
+      { label: 'Build Time',  value: '16 hours' },
+      { label: 'Module',      value: '2mm (custom available)' },
+      { label: 'Tolerance',   value: '±0.15mm' },
+    ],
+    includes: ['Full gear assembly set','Dimensional report','Assembly instructions'],
+    printDetails: [
+      { label: 'Post-Process', value: 'Tumble polished' },
+      { label: 'Lubrication',  value: 'Compatible with standard grease' },
+      { label: 'Bore Options', value: 'Custom on request' },
+      { label: 'Color',        value: 'Natural / Black' },
+    ],
+    leadTime: '5–6 business days',
+  },
+};
+
+// ── Related products lookup ───────────────────────────────
+function getRelated(currentId) {
+  const all = Object.entries(products).filter(([k]) => k !== currentId).slice(0, 3);
+  return all;
+}
+
+// ── Render page ──────────────────────────────────────────
+function renderProduct() {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id') || 'arch';
+  const p = products[id] || products['arch'];
+
+  document.title = `${p.title} — Precision 3D`;
+  document.getElementById('bcCurrent').textContent = p.title;
+  document.getElementById('prodTitle').textContent = p.title;
+  document.getElementById('prodPrice').textContent = p.price;
+  document.getElementById('prodCategory').textContent = p.category;
+  document.getElementById('prodCategory').style.background = getCatBg(p.catClass);
+
+  document.getElementById('prodDesc').textContent = p.shortDesc;
+  document.getElementById('extDesc').textContent = p.fullDesc;
+  document.getElementById('leadTime').textContent = p.leadTime;
+
+  // Main image
+  const mainImg = document.getElementById('mainImg');
+  mainImg.src = p.img;
+  mainImg.alt = p.title;
+
+  // Thumbs
+  const thumbRow = document.getElementById('thumbRow');
+  thumbRow.innerHTML = '';
+  p.thumbs.forEach((src, i) => {
+    const thumb = document.createElement('div');
+    thumb.className = 'product-thumb' + (i === 0 ? ' active' : '');
+    thumb.innerHTML = `<img src="${src}" alt="Thumb ${i+1}" loading="lazy"/>`;
+    thumb.addEventListener('click', () => {
+      mainImg.src = src;
+      thumbRow.querySelectorAll('.product-thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    });
+    thumbRow.appendChild(thumb);
+  });
+
+  // Specs
+  const specsGrid = document.getElementById('specsGrid');
+  specsGrid.innerHTML = '';
+  p.specs.forEach(s => {
+    specsGrid.innerHTML += `
+      <div class="spec-item">
+        <div class="spec-label">${s.label}</div>
+        <div class="spec-value">${s.value}</div>
+      </div>`;
+  });
+
+  // Includes
+  const includesList = document.getElementById('includesList');
+  includesList.innerHTML = '';
+  p.includes.forEach(item => {
+    includesList.innerHTML += `
+      <li style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-secondary);">
+        <span style="color:var(--accent);font-size:16px;">✓</span> ${item}
+      </li>`;
+  });
+
+  // Print details
+  const printDetails = document.getElementById('printDetails');
+  printDetails.innerHTML = '';
+  p.printDetails.forEach(d => {
+    printDetails.innerHTML += `
+      <div style="display:flex;justify-content:space-between;align-items:center;font-size:14px;">
+        <span style="color:var(--text-muted);">${d.label}</span>
+        <span style="font-weight:600;">${d.value}</span>
+      </div>`;
+  });
+
+  // Related
+  const relatedGrid = document.getElementById('relatedGrid');
+  relatedGrid.innerHTML = '';
+  getRelated(id).forEach(([rid, rp]) => {
+    relatedGrid.innerHTML += `
+      <div class="portfolio-card reveal" onclick="location.href='product-detail.html?id=${rid}'">
+        <div class="portfolio-img-wrap">
+          <img src="${rp.img}" alt="${rp.title}" loading="lazy"/>
+          <div class="portfolio-overlay"><button class="portfolio-overlay-btn">View Details</button></div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-info-top">
+            <div class="portfolio-name">${rp.title}</div>
+            <div class="portfolio-price">${rp.price}</div>
+          </div>
+          <p class="portfolio-desc">${rp.shortDesc}</p>
+          <a href="product-detail.html?id=${rid}" class="portfolio-view-link">View Details →</a>
+        </div>
+      </div>`;
+  });
+}
+
+function getCatBg(cls) {
+  const map = {
+    proto: 'rgba(37,99,235,0.15)', deco: 'rgba(6,182,212,0.12)',
+    ind: 'rgba(249,115,22,0.12)', mech: 'rgba(139,92,246,0.12)',
+  };
+  return map[cls] || map.proto;
+}
+
+// ── Lightbox ─────────────────────────────────────────────
+document.getElementById('mainImgWrap').addEventListener('click', () => {
+  const lightbox = document.getElementById('lightbox');
+  document.getElementById('lightboxImg').src = document.getElementById('mainImg').src;
+  lightbox.classList.add('open');
+});
+document.getElementById('lightboxClose').addEventListener('click', () => {
+  document.getElementById('lightbox').classList.remove('open');
+});
+document.getElementById('lightbox').addEventListener('click', function(e) {
+  if (e.target === this) this.classList.remove('open');
+});
+
+renderProduct();
+</script>
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — Precision 3D</title>
+  <meta name="description" content="Get in touch with Precision 3D. We'll respond within 2 business hours."/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖨️</text></svg>"/>
+  <style>
+    .map-embed {
+      width: 100%; height: 300px; border-radius: var(--radius-xl);
+      background: var(--dark-4); border: 1px solid var(--dark-border);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 12px; color: var(--text-muted);
+      font-size: 14px; margin-top: 24px; overflow: hidden; position: relative;
+    }
+    .map-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(37,99,235,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37,99,235,0.08) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .map-pin {
+      position: relative; z-index: 1;
+      font-size: 40px; filter: drop-shadow(0 4px 12px rgba(37,99,235,0.6));
+      animation: float 3s ease-in-out infinite;
+    }
+    .map-label {
+      position: relative; z-index: 1;
+      background: var(--dark-3); border: 1px solid rgba(37,99,235,0.3);
+      padding: 8px 16px; border-radius: var(--radius-md);
+      font-size: 13px; font-weight: 600; color: var(--text-primary);
+    }
+    .faq-item {
+      border: 1px solid var(--card-border); border-radius: var(--radius-md);
+      overflow: hidden; margin-bottom: 10px;
+    }
+    .faq-question {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 24px; cursor: pointer;
+      font-size: 15px; font-weight: 600; background: var(--card-bg);
+      transition: var(--transition);
+    }
+    .faq-question:hover { background: rgba(255,255,255,0.06); }
+    .faq-icon { font-size: 18px; transition: var(--transition); }
+    .faq-answer {
+      padding: 0 24px; max-height: 0; overflow: hidden;
+      transition: all 0.35s cubic-bezier(.4,0,.2,1);
+      color: var(--text-secondary); font-size: 14px; line-height: 1.7;
+    }
+    .faq-item.open .faq-answer { max-height: 200px; padding: 0 24px 20px; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .hours-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
+    .hour-row {
+      display: flex; justify-content: space-between;
+      background: var(--dark-4); border-radius: var(--radius-sm); padding: 10px 14px;
+      font-size: 13px;
+    }
+    .hour-row span:last-child { font-weight: 700; color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<!-- ── Navbar ─────────────────────────────────────────────── -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon">⬡</div>
+      Precision<span> 3D</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html"     class="nav-link">Home</a>
+      <a href="services.html"  class="nav-link">Services</a>
+      <a href="portfolio.html" class="nav-link">Portfolio</a>
+      <a href="contact.html"   class="nav-link active">Contact</a>
+    </div>
+    <a href="quote.html" class="btn btn-primary btn-sm nav-cta">Get a Quote</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="index.html"     class="nav-link">Home</a>
+  <a href="services.html"  class="nav-link">Services</a>
+  <a href="portfolio.html" class="nav-link">Portfolio</a>
+  <a href="contact.html"   class="nav-link active">Contact</a>
+  <a href="quote.html" class="btn btn-primary" style="margin-top:12px;justify-content:center">Get a Quote</a>
+</div>
+
+<!-- ── Page Hero ──────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="container">
+    <div class="badge" style="margin-bottom:20px;">We'd Love to Hear From You</div>
+    <h1 class="page-hero-title">Get in <span class="highlight">Touch</span></h1>
+    <p class="page-hero-desc">Have a project in mind or a question about our services? We respond within 2 business hours.</p>
+  </div>
+</section>
+
+<!-- ── Contact Main ───────────────────────────────────────── -->
+<section class="section" style="padding-top:40px;">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Left: Info -->
+      <div class="contact-info reveal">
+        <div class="contact-info-card">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-info-label">Our Location</div>
+            <div class="contact-info-value">123 Innovation Drive<br/>Austin, TX 78701, USA</div>
+          </div>
+        </div>
+        <div class="contact-info-card">
+          <div class="contact-icon">📧</div>
+          <div>
+            <div class="contact-info-label">Email Us</div>
+            <div class="contact-info-value"><a href="mailto:hello@precision3d.com" style="color:var(--blue-light)">hello@precision3d.com</a></div>
+          </div>
+        </div>
+        <div class="contact-info-card">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-info-label">Call Us</div>
+            <div class="contact-info-value"><a href="tel:+15125550199" style="color:var(--blue-light)">+1 (512) 555-0199</a></div>
+          </div>
+        </div>
+        <div class="contact-info-card">
+          <div class="contact-icon">⏱️</div>
+          <div style="width:100%">
+            <div class="contact-info-label">Business Hours</div>
+            <div class="hours-grid">
+              <div class="hour-row"><span>Mon – Fri</span><span>8am – 7pm CT</span></div>
+              <div class="hour-row"><span>Saturday</span><span>9am – 4pm CT</span></div>
+              <div class="hour-row"><span>Sunday</span><span>Closed</span></div>
+              <div class="hour-row"><span>Express</span><span>24/7 Available</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map placeholder -->
+        <div class="map-embed reveal">
+          <div class="map-grid"></div>
+          <div class="map-pin">📍</div>
+          <div class="map-label">123 Innovation Drive, Austin TX</div>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="form-card reveal delay-2">
+        <div class="form-title">Send Us a Message</div>
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="cf-name">Full Name *</label>
+              <input class="form-input" id="cf-name" type="text" placeholder="John Smith" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cf-email">Email Address *</label>
+              <input class="form-input" id="cf-email" type="email" placeholder="john@company.com" required/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="cf-phone">Phone (optional)</label>
+              <input class="form-input" id="cf-phone" type="tel" placeholder="+1 (512) 000-0000"/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cf-subject">Subject *</label>
+              <select class="form-select" id="cf-subject" required>
+                <option value="">Select a topic</option>
+                <option>Get a Quote</option>
+                <option>Order Status</option>
+                <option>Technical Question</option>
+                <option>Custom Project Inquiry</option>
+                <option>Partnership / B2B</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="cf-service">Service Interested In</label>
+            <select class="form-select" id="cf-service">
+              <option value="">Not sure yet</option>
+              <option>FDM Printing</option>
+              <option>SLA Resin Printing</option>
+              <option>SLS Nylon Printing</option>
+              <option>Architectural Model</option>
+              <option>Post-Processing / Finishing</option>
+              <option>Custom Design</option>
+              <option>Production Run</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="cf-message">Message *</label>
+            <textarea class="form-textarea" id="cf-message" placeholder="Describe your project, upload requirements, timeline, or any questions..." rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg form-submit" id="contactSubmit">
+            Send Message →
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ────────────────────────────────────────────────── -->
+<section class="section" style="padding-top:0;background:var(--dark-2);">
+  <div class="container" style="max-width:800px;">
+    <div style="text-align:center;" class="reveal">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Frequently Asked <span class="highlight">Questions</span></h2>
+    </div>
+    <div style="margin-top:48px;" class="reveal">
+      <div class="faq-item">
+        <div class="faq-question"><span>What file formats do you accept?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">We accept STL, OBJ, STEP, IGES, 3MF, and AMF files. If you only have a 2D drawing or sketch, our design team can create a 3D model for you starting at $50.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question"><span>How long does an order take?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">FDM parts can ship in as little as 24 hours. SLA typically takes 2–4 days, and SLS 4–7 days. Express options are available for an additional fee. Production runs are quoted individually.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question"><span>What is your minimum order quantity?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">There is no minimum order quantity. We print single units for prototyping and scale up to thousands for production runs, with volume pricing kicking in at 50+ units.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question"><span>Do you ship internationally?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Yes — we ship worldwide. Standard international delivery takes 5–10 business days. Express international shipping is available. Free shipping on orders over $200 within the US.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question"><span>What accuracy can I expect?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">FDM achieves ±0.2mm, SLA achieves ±0.05mm, and SLS achieves ±0.1mm. For critical tolerances, we recommend SLA. All parts undergo dimensional inspection before shipping.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question"><span>Can I get a refund if I'm not satisfied?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer">Yes. If a part doesn't match the approved design specifications, we will reprint or refund it. Custom designs and client-provided files are final once approved, but we work with you to get it right.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────────────── -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-card reveal">
+      <h2 class="cta-title">Need an Instant Price?<br/><span class="highlight">Use Our Quote Tool</span></h2>
+      <p class="cta-desc">Upload your file and get a detailed price estimate within minutes — no waiting required.</p>
+      <div class="cta-actions">
+        <a href="quote.html" class="btn btn-primary btn-lg">Get Instant Quote →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-icon">⬡</div>
+          Precision<span style="color:var(--blue-light)"> 3D</span>
+        </div>
+        <p class="footer-desc">Custom 3D printing for prototypes and production. Precision-crafted parts delivered fast.</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link">𝕏</a>
+          <a href="#" class="footer-social-link">in</a>
+          <a href="#" class="footer-social-link">📷</a>
+          <a href="#" class="footer-social-link">▶</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <div class="footer-links">
+          <a href="index.html"     class="footer-link">Home</a>
+          <a href="services.html"  class="footer-link">Services</a>
+          <a href="portfolio.html" class="footer-link">Portfolio</a>
+          <a href="contact.html"   class="footer-link">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <div class="footer-links">
+          <a href="services.html" class="footer-link">FDM Printing</a>
+          <a href="services.html" class="footer-link">SLA Resin</a>
+          <a href="services.html" class="footer-link">SLS Nylon</a>
+          <a href="services.html" class="footer-link">Post-Processing</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-links">
+          <span class="footer-link">📍 123 Innovation Drive, Austin TX</span>
+          <a href="mailto:hello@precision3d.com" class="footer-link">📧 hello@precision3d.com</a>
+          <a href="tel:+15125550199" class="footer-link">📞 +1 (512) 555-0199</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Precision 3D. All rights reserved.</span>
+      <span>Privacy Policy · Terms of Service</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast">✅ Message sent! We'll reply within 2 hours.</div>
+
+<script src="main.js"></script>
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+// Contact form
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('contactSubmit');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.textContent = 'Message Sent ✓';
+    showToast();
+    this.reset();
+    setTimeout(() => { btn.textContent = 'Send Message →'; btn.disabled = false; }, 3000);
+  }, 1500);
+});
+</script>
+</body>
+</html>

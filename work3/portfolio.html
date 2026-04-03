@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio — Precision 3D</title>
+  <meta name="description" content="Browse Precision 3D's product portfolio — architectural models, decorative vases, industrial turbine blades, mechanical parts, and more."/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖨️</text></svg>"/>
+</head>
+<body>
+
+<!-- ── Navbar ─────────────────────────────────────────────── -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon">⬡</div>
+      Precision<span> 3D</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html"     class="nav-link">Home</a>
+      <a href="services.html"  class="nav-link">Services</a>
+      <a href="portfolio.html" class="nav-link active">Portfolio</a>
+      <a href="contact.html"   class="nav-link">Contact</a>
+    </div>
+    <a href="quote.html" class="btn btn-primary btn-sm nav-cta">Get a Quote</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="index.html"     class="nav-link">Home</a>
+  <a href="services.html"  class="nav-link">Services</a>
+  <a href="portfolio.html" class="nav-link active">Portfolio</a>
+  <a href="contact.html"   class="nav-link">Contact</a>
+  <a href="quote.html"     class="btn btn-primary" style="margin-top:12px;justify-content:center">Get a Quote</a>
+</div>
+
+<!-- ── Page Hero ──────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="container">
+    <div class="badge" style="margin-bottom:20px;">Our Work</div>
+    <h1 class="page-hero-title">Product <span class="highlight">Portfolio</span></h1>
+    <p class="page-hero-desc">Browse our collection of precision 3D-printed models — from architectural prototypes to industrial components.</p>
+  </div>
+</section>
+
+<!-- ── Portfolio Section ───────────────────────────────────── -->
+<section class="section" style="padding-top:20px;">
+  <div class="container">
+
+    <!-- Filters -->
+    <div class="portfolio-filters reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="proto">Prototypes</button>
+      <button class="filter-btn" data-filter="mech">Mechanical Parts</button>
+      <button class="filter-btn" data-filter="deco">Decorative Models</button>
+      <button class="filter-btn" data-filter="ind">Industrial Components</button>
+    </div>
+
+    <!-- Grid -->
+    <div class="portfolio-grid" id="portfolioGrid">
+
+      <!-- 1: Architectural Scale Model -->
+      <div class="portfolio-card reveal delay-1" data-cat="proto" onclick="location.href='product-detail.html?id=arch'">
+        <div class="portfolio-img-wrap">
+          <span class="portfolio-cat-badge cat-proto">Prototypes</span>
+          <img src="images/arch_model.png" alt="Architectural Scale Model" loading="lazy"/>
+          <div class="portfolio-overlay">
+            <button class="portfolio-overlay-btn">View Details</button>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-info-top">
+            <div class="portfolio-name">Architectural Scale Model</div>
+            <div class="portfolio-price">$149</div>
+          </div>
+          <p class="portfolio-desc">Detailed building prototype for urban planning presentation.</p>
+          <a href="product-detail.html?id=arch" class="portfolio-view-link">View Details →</a>
+        </div>
+      </div>
+
+      <!-- 2: Organic Decorative Vase -->
+      <div class="portfolio-card reveal delay-2" data-cat="deco" onclick="location.href='product-detail.html?id=vase'">
+        <div class="portfolio-img-wrap">
+          <span class="portfolio-cat-badge cat-deco">Decorative</span>
+          <img src="images/organic_vase.png" alt="Organic Decorative Vase" loading="lazy"/>
+          <div class="portfolio-overlay">
+            <button class="portfolio-overlay-btn">View Details</button>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-info-top">
+            <div class="portfolio-name">Organic Decorative Vase</div>
+            <div class="portfolio-price">$89</div>
+          </div>
+          <p class="portfolio-desc">Artistic flowing design printed in premium white resin.</p>
+          <a href="product-detail.html?id=vase" class="portfolio-view-link">View Details →</a>
+        </div>
+      </div>
+
+      <!-- 3: Industrial Turbine Blade -->
+      <div class="portfolio-card reveal delay-3" data-cat="ind" onclick="location.href='product-detail.html?id=turbine'">
+        <div class="portfolio-img-wrap">
+          <span class="portfolio-cat-badge cat-ind">Industrial</span>
+          <img src="images/turbine_blade.png" alt="Industrial Turbine Blade" loading="lazy"/>
+          <div class="portfolio-overlay">
+            <button class="portfolio-overlay-btn">View Details</button>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-info-top">
+            <div class="portfolio-name">Industrial Turbine Blade</div>
+            <div class="portfolio-price">$320</div>
+          </div>
+          <p class="portfolio-desc">High-performance turbine component for aerospace testing.</p>
+          <a href="product-detail.html?id=turbine" class="portfolio-view-link">View Details →</a>
+        </div>
+      </div>
+
+      <!-- 4: Robotic Arm -->
+      <div class="portfolio-card reveal delay-1" data-cat="mech" onclick="location.href='product-detail.html?id=robot'">
+        <div class="portfolio-img-wrap">
+          <span class="portfolio-cat-badge cat-mech">Mechanical</span>
+          <img src="images/robot_arm.png" alt="Articulated Robotic Arm" loading="lazy"/>
+          <div class="portfolio-overlay">
+            <button class="portfolio-overlay-btn">View Details</button>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-info-top">
+            <div class="portfolio-name">Articulated Robotic Arm</div>
+            <div class="portfolio-price">$210</div>
+          </div>
+          <p class="portfolio-desc">Multi-joint mechanical arm for robotics research and demonstrations.</p>
+          <a href="product-detail.html?id=robot" class="portfolio-view-link">View Details →</a>
+        </div>
+      </div>
+
+      <!-- 5: Phone Case -->
+      <div class="portfolio-card reveal delay-2" data-cat="proto" onclick="location.href='product-detail.html?id=phone'">
+        <div class="portfolio-img-wrap">
+          <span class="portfolio-cat-badge cat-proto">Prototypes</span>
+          <img src="images/phone_case.png" alt="Custom Phone Case" loading="lazy"/>
+          <div class="portfolio-overlay">
+            <button class="portfolio-overlay-btn">View Details</button>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-info-top">
+            <div class="portfolio-name">Custom Phone Case</div>
+            <div class="portfolio-price">$45</div>
+          </div>
+          <p class="portfolio-desc">Precision-fitted custom smartphone enclosure, ready for branding.</p>
+          <a href="product-detail.html?id=phone" class="portfolio-view-link">View Details →</a>
+        </div>
+      </div>
+
+      <!-- 6: Gear Assembly (placeholder card) -->
+      <div class="portfolio-card reveal delay-3" data-cat="mech" onclick="location.href='product-detail.html?id=gear'">
+        <div class="portfolio-img-wrap" style="background:#1a2234;display:flex;align-items:center;justify-content:center;">
+          <span class="portfolio-cat-badge cat-mech">Mechanical</span>
+          <div style="font-size:80px;opacity:0.6">⚙️</div>
+          <div class="portfolio-overlay">
+            <button class="portfolio-overlay-btn">View Details</button>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-info-top">
+            <div class="portfolio-name">Precision Gear Assembly</div>
+            <div class="portfolio-price">$175</div>
+          </div>
+          <p class="portfolio-desc">Custom gear train with helical teeth, printed in industrial nylon.</p>
+          <a href="product-detail.html?id=gear" class="portfolio-view-link">View Details →</a>
+        </div>
+      </div>
+
+    </div>
+    <!-- No results msg -->
+    <div id="noResults" style="display:none;text-align:center;padding:60px 0;">
+      <div style="font-size:48px;margin-bottom:16px;">🔍</div>
+      <div style="font-size:18px;font-weight:600;margin-bottom:8px;">No items in this category yet</div>
+      <div style="color:var(--text-muted)">Check back soon — we're always adding new work.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────────────── -->
+<section class="cta-section" style="padding-top:0;">
+  <div class="container">
+    <div class="cta-card reveal">
+      <h2 class="cta-title">Don't See What<br/><span class="highlight">You're Looking For?</span></h2>
+      <p class="cta-desc">We can print virtually anything. Upload your design and get a custom quote in minutes.</p>
+      <div class="cta-actions">
+        <a href="quote.html"   class="btn btn-primary btn-lg">Get a Custom Quote →</a>
+        <a href="contact.html" class="btn btn-outline btn-lg">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-icon">⬡</div>
+          Precision<span style="color:var(--blue-light)"> 3D</span>
+        </div>
+        <p class="footer-desc">Custom 3D printing for prototypes and production. Precision-crafted parts delivered fast.</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link">𝕏</a>
+          <a href="#" class="footer-social-link">in</a>
+          <a href="#" class="footer-social-link">📷</a>
+          <a href="#" class="footer-social-link">▶</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <div class="footer-links">
+          <a href="index.html"     class="footer-link">Home</a>
+          <a href="services.html"  class="footer-link">Services</a>
+          <a href="portfolio.html" class="footer-link">Portfolio</a>
+          <a href="contact.html"   class="footer-link">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <div class="footer-links">
+          <a href="services.html" class="footer-link">FDM Printing</a>
+          <a href="services.html" class="footer-link">SLA Resin</a>
+          <a href="services.html" class="footer-link">SLS Nylon</a>
+          <a href="services.html" class="footer-link">Post-Processing</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-links">
+          <span class="footer-link">📍 123 Innovation Drive, Austin TX</span>
+          <a href="mailto:hello@precision3d.com" class="footer-link">📧 hello@precision3d.com</a>
+          <a href="tel:+15125550199" class="footer-link">📞 +1 (512) 555-0199</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Precision 3D. All rights reserved.</span>
+      <span>Privacy Policy · Terms of Service</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
